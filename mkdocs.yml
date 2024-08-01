@@ -1,11 +1,11 @@
-site_name: Otterdog configuration @ {{ org }}
-site_description: Otterdog configuration @ {{ org }}
+site_name: Otterdog configuration @ eclipse-openbsw
+site_description: Otterdog configuration @ eclipse-openbsw
 strict: false
 
-site_url: https://{{ org }}.github.io/.eclipsefdn/
+site_url: https://eclipse-openbsw.github.io/.eclipsefdn/
 
-repo_name: {{ org }}/.eclipsefdn
-repo_url: https://github.com/{{ org }}/.eclipsefdn/
+repo_name: eclipse-openbsw/.eclipsefdn
+repo_url: https://github.com/eclipse-openbsw/.eclipsefdn/
 
 docs_dir: ./docs
 site_dir: ./_site
@@ -35,7 +35,7 @@ nav:
 watch: []
 
 extra:
-  org_id: {{ org }}
+  org_id: eclipse-openbsw
 
 extra_css:
   - stylesheets/extra.css
