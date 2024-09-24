@@ -9,4 +9,9 @@ orgs.newOrg('eclipse-openbsw') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  _repositories+:: [
+    orgs.newRepo('.github') {
+      has_discussions: true,
+    },
+  ],
 }
