@@ -17,7 +17,6 @@ orgs.newOrg('eclipse-openbsw') {
       delete_branch_on_merge: true,
       has_issues: true,
       allow_merge_commit: false,
-      delete_branch_on_merge: true,
       default_branch: "main"
     },
   ],
