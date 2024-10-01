@@ -5,6 +5,7 @@ orgs.newOrg('eclipse-openbsw') {
     description: "",
     name: "Eclipse OpenBSW",
     web_commit_signoff_required: false,
+    members_can_fork_private_repositories: true,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
     },
