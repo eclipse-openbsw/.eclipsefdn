@@ -11,6 +11,9 @@ orgs.newOrg('eclipse-openbsw') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('.github') {
+      has_discussions: true,
+    },
     orgs.newRepo('openbsw') {
       private: true,
       has_discussions: true,
