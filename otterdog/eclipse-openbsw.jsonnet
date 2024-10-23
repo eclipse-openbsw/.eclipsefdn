@@ -17,6 +17,7 @@ orgs.newOrg('eclipse-openbsw') {
     orgs.newRepo('openbsw') {
       private: false,
       has_discussions: true,
+      homepage: "https://eclipse-openbsw.github.io/openbsw",
       description: "OpenBSW: A Code-first Software Platform for Automotive Microcontrollers",
       delete_branch_on_merge: true,
       has_issues: true,
@@ -25,12 +26,14 @@ orgs.newOrg('eclipse-openbsw') {
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
-            "main"
+            "gh-pages"
           ],
           deployment_branch_policy: "selected",
         },
       ],
-      gh_pages_build_type: "workflow",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
     },
   ],
 }
