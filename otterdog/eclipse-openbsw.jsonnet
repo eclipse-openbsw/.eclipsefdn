@@ -17,6 +17,7 @@ orgs.newOrg('eclipse-openbsw') {
     orgs.newRepo('openbsw') {
       private: false,
       has_discussions: true,
+      homepage: "https://eclipse-openbsw.github.io/openbsw",
       description: "OpenBSW: A Code-first Software Platform for Automotive Microcontrollers",
       delete_branch_on_merge: true,
       has_issues: true,
