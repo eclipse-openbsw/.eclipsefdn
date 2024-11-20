@@ -22,6 +22,7 @@ orgs.newOrg('eclipse-openbsw') {
       delete_branch_on_merge: true,
       has_issues: true,
       allow_merge_commit: false,
+      allow_squash_merge: true,
       default_branch: "main",
       environments: [
         orgs.newEnvironment('github-pages') {
