@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-openbsw') {
+orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
   settings+: {
     description: "",
     name: "Eclipse OpenBSW",
