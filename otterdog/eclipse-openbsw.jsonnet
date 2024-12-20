@@ -34,6 +34,30 @@ orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            dismisses_stale_reviews: true,
+          },
+          required_status_checks+: {
+            status_checks: [
+              "build-executable",
+              "code-coverage",
+              "doxygen-build",
+              "treefmt",
+              "sphinx-doc-build",
+            ],
+          },
+          requires_linear_history: true,
+          required_merge_queue: orgs.newMergeQueue() {
+            merge_method: "SQUASH",
+          },
+        }
+      ],
     },
   ],
 }
