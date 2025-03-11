@@ -34,6 +34,18 @@ orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "refs/heads/main"
+          ],
+          required_pull_request+: {
+            dismisses_stale_reviews: true,
+            required_approving_review_count: 1,
+            requires_code_owner_review: false,
+          },
+        },
+      ],
     },
   ],
 }
