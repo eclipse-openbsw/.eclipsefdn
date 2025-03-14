@@ -37,10 +37,10 @@ orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           requires_pull_request: true,
-          required_approving_review_count: 1,
+          required_approving_review_count: 0,
           dismisses_stale_reviews: true,
           requires_code_owner_reviews: false,
-            require_last_push_approval: false,
+          require_last_push_approval: false,
         },
       ],
     },
