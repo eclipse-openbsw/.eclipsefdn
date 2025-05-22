@@ -44,5 +44,35 @@ orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
         },
       ],
     },
+    orgs.newRepo('openbsw-zephyr') {
+      private: false,
+      has_discussions: true,
+      homepage: "https://eclipse-openbsw.github.io/openbsw-zephyr",
+      description: "Example of using openbsw within zephyr",
+      delete_branch_on_merge: true,
+      has_issues: true,
+      allow_merge_commit: false,
+      default_branch: "main",
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          requires_pull_request: true,
+          required_approving_review_count: 0,
+          dismisses_stale_reviews: true,
+          requires_code_owner_reviews: false,
+          require_last_push_approval: false,
+        },
+      ],
+    },
   ],
 }
