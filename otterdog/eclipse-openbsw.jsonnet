@@ -14,6 +14,19 @@ orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
     orgs.newRepo('.github') {
       has_discussions: true,
     },
+    orgs.newRepo('etl') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      default_branch: "master",
+      delete_branch_on_merge: false,
+      dependabot_alerts_enabled: false,
+      description: "Embedded Template Library (forked from https://github.com/eclipse-openbsw/etl)",
+      has_issues: false,
+      homepage: "https://www.etlcpp.com",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('openbsw') {
       private: false,
       has_discussions: true,
