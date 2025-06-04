@@ -54,5 +54,24 @@ orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
         },
       ],
     },
+    orgs.newRepo('openbsw-zephyr') {
+      private: false,
+      has_discussions: true,
+      description: "Example of using openbsw within zephyr",
+      delete_branch_on_merge: true,
+      has_issues: true,
+      allow_merge_commit: false,
+      default_branch: "main",
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          requires_pull_request: true,
+          required_approving_review_count: 0,
+          dismisses_stale_reviews: true,
+          requires_code_owner_reviews: false,
+          require_last_push_approval: false,
+          allows_force_pushes: false,
+        },
+      ],
+    },
   ],
 }
