@@ -44,13 +44,28 @@ orgs.newOrg('automotive.openbsw', 'eclipse-openbsw') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          requires_pull_request: true,
-          required_approving_review_count: 0,
-          dismisses_stale_reviews: true,
-          requires_code_owner_reviews: false,
-          require_last_push_approval: false,
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 0,
+            dismisses_stale_reviews: true,
+            requires_code_owner_review: false,
+            requires_last_push_approval: false,
+          },
+          required_status_checks+: {
+            strict: false,
+            status_checks+: [
+              "ci-gate",
+            ],
+          },
+          required_merge_queue: orgs.newMergeQueue() {
+            merge_method: "REBASE",
+            max_group_size: 5,
+            status_check_timeout: 120,
+          },
         },
       ],
     },
